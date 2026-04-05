@@ -1,0 +1,59 @@
+{
+  "expo": {
+    "name": "FleetGuard",
+    "slug": "fleetguard",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "scheme": "fleetguard",
+    "userInterfaceStyle": "dark",
+    "splash": {
+      "backgroundColor": "#0f1923"
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "single"
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.fleetguard.app",
+      "infoPlist": {
+        "NSCameraUsageDescription": "FleetGuard a besoin de la caméra pour capturer les photos d'inspection du véhicule.",
+        "NSLocationWhenInUseUsageDescription": "FleetGuard utilise votre position pour horodater géographiquement chaque inspection."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#0f1923"
+      },
+      "package": "com.fleetguard.app",
+      "permissions": [
+        "CAMERA",
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE"
+      ]
+    },
+    "plugins": [
+      "expo-router",
+      "expo-camera",
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "FleetGuard utilise votre position pour les inspections."
+        }
+      ],
+      "expo-secure-store"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "eas": {
+        "projectId": "votre-project-id"
+      }
+    }
+  }
+}
